@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import ContactImg from "../assets/images/contact.jpg";
+import ConfirmationPopup from "./ConfirmationPopup";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isFormValid) {
+      setIsConfirmationPopupOpen(true);
+    }
+  };
+
+  const isFormValid = name && email && message;
+
   return (
     <div className="container mx-auto mt-5 p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -10,77 +25,67 @@ function Contact() {
           <h4 className="text-lg mb-4">
             Questions? Comments? Feedback? We're listening.
           </h4>
-          <form>
-            <div className="flex flex-wrap -mx-3 mb-4">
-              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label
-                  htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
-                  id="firstName"
-                  placeholder="John"
-                />
-              </div>
-              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
-                  id="lastName"
-                  placeholder="Doe"
-                />
-              </div>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="name"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                required
+              />
             </div>
             <div className="mb-4">
               <label
+                className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
               >
                 Email
               </label>
               <input
                 type="email"
-                className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
                 id="email"
-                placeholder="john.doe@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                required
               />
             </div>
             <div className="mb-4">
               <label
+                className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
               >
                 Message
               </label>
               <textarea
-                className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
                 id="message"
-                rows="3"
-                placeholder="Your message here"
-              ></textarea>
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                required
+              />
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center w-full py-2 text-white bg-dark-green hover:bg-light-green rounded-lg transition duration-200 ease-in-out"
+              className={`flex items-center justify-center w-full py-2 text-white bg-dark-green hover:bg-light-green rounded-lg transition duration-200 ease-in-out ${
+                !isFormValid ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={!isFormValid}
             >
               Submit
             </button>
           </form>
         </div>
         <div className="w-full">
-          {" "}
           <div className="overflow-hidden rounded-lg shadow-md">
-            {" "}
             <img
               src={ContactImg}
               alt="Contact image"
@@ -89,6 +94,11 @@ function Contact() {
           </div>
         </div>
       </div>
+      <ConfirmationPopup
+        isOpen={isConfirmationPopupOpen}
+        onClose={() => setIsConfirmationPopupOpen(false)}
+        message="Your message has been sent!"
+      />
     </div>
   );
 }
