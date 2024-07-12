@@ -161,7 +161,12 @@ function Reserve() {
       <ConfirmationPopup
         isOpen={isConfirmationPopupOpen}
         onClose={() => setIsConfirmationPopupOpen(false)}
-        message="Your message has been sent!"
+        message={[
+          { label: "Name", value: name },
+          { label: "Email", value: email },
+          { label: "Date", value: startDate },
+          { label: "Seatings", value: seatings },
+        ]}
       />
     </div>
   );

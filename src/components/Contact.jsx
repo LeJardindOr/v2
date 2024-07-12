@@ -97,7 +97,11 @@ function Contact() {
       <ConfirmationPopup
         isOpen={isConfirmationPopupOpen}
         onClose={() => setIsConfirmationPopupOpen(false)}
-        message="Your message has been sent!"
+        message={[
+          { label: "Name", value: name },
+          { label: "Email", value: email },
+          { label: "Message", value: message },
+        ]}
       />
     </div>
   );
