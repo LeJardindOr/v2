@@ -77,32 +77,29 @@ function HomeMenuExcerpt() {
       <h3 className="mb-8">See Some Of Our Best Menu Items</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         {menuItems.map((item) => (
-          <div key={item.id} className="flex flex-col overflow-hidden h-full">
-            <Link to="/menu">
+          <Link to="/menu">
+            <div key={item.id} className="flex flex-col overflow-hidden h-full">
               <img
                 src={item.src}
                 alt={`Menu Item ${item.id}`}
                 className="w-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
               />
-            </Link>
-            <div className="flex-1 py-4 flex flex-col">
-              <div className="font-bold text-xl mb-2">{item.subtitle}</div>
-              <p className="text-gray-600 text-base text-justify flex-1">
-                {item.desc}
-              </p>
-              <div className="mt-4">
-                <Link
-                  to="/menu"
-                  className="group inline-flex items-center text-black"
-                >
-                  See menu
-                  <span className="ml-2 transition-transform transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
+              <div className="flex-1 py-4 flex flex-col">
+                <div className="font-bold text-xl mb-2">{item.subtitle}</div>
+                <p className="text-gray-600 text-base text-justify flex-1">
+                  {item.desc}
+                </p>
+                <div className="mt-4">
+                  <div className="group inline-flex items-center text-black">
+                    See menu
+                    <span className="ml-2 transition-transform transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -118,57 +115,53 @@ function HomeMenuExcerpt() {
               className="w-full md:h-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
             />
           </Link>
-          <div className="py-4 flex flex-col">
-            <div className="font-bold text-xl mb-2">
-              {secondRowMenuItems[0].subtitle}
+          <Link to="/menu">
+            <div className="py-4 flex flex-col">
+              <div className="font-bold text-xl mb-2">
+                {secondRowMenuItems[0].subtitle}
+              </div>
+              <p className="text-gray-600 text-base text-justify flex-1">
+                {secondRowMenuItems[0].desc}
+              </p>
+              <div className="mt-4">
+                <div className="group inline-flex items-center text-black">
+                  See menu
+                  <span className="ml-2 transition-transform transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </div>
+              </div>
             </div>
-            <p className="text-gray-600 text-base text-justify flex-1">
-              {secondRowMenuItems[0].desc}
-            </p>
-            <div className="mt-4">
-              <Link
-                to="/menu"
-                className="group inline-flex items-center text-black"
-              >
-                See menu
-                <span className="ml-2 transition-transform transform group-hover:translate-x-1">
-                  →
-                </span>
-              </Link>
-            </div>
-          </div>
+          </Link>
         </div>
         <div className="flex flex-col col-span-1 space-y-8">
           {secondRowMenuItems.slice(1).map((item) => (
-            <div
-              key={item.id}
-              className="flex-1 flex flex-col overflow-hidden h-full"
-            >
-              <Link to="/menu">
+            <Link to="/menu">
+              <div
+                key={item.id}
+                className="flex-1 flex flex-col overflow-hidden h-full"
+              >
                 <img
                   src={item.src}
                   alt={`Menu Item ${item.id}`}
                   className="w-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
                 />
-              </Link>
-              <div className="py-4 flex flex-col">
-                <div className="font-bold text-xl mb-2">{item.subtitle}</div>
-                <p className="text-gray-600 text-base text-justify flex-1">
-                  {item.desc}
-                </p>
-                <div className="mt-4">
-                  <Link
-                    to="/menu"
-                    className="group inline-flex items-center text-black"
-                  >
-                    See menu
-                    <span className="ml-2 transition-transform transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </Link>
+                <div className="py-4 flex flex-col">
+                  <div className="font-bold text-xl mb-2">{item.subtitle}</div>
+                  <p className="text-gray-600 text-base text-justify flex-1">
+                    {item.desc}
+                  </p>
+                  <div className="mt-4">
+                    <div className="group inline-flex items-center text-black">
+                      See menu
+                      <span className="ml-2 transition-transform transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
