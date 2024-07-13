@@ -7,243 +7,6 @@ import MainCourseImg from "../assets/images/HomeFood1.jpg";
 import DessertsImg from "../assets/images/HomeFood9.jpg";
 import DrinksImg from "../assets/images/HomeFood6.jpg";
 
-const Appetizers = [
-  {
-    name: "Garden Salad",
-    price: 5.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Bruschetta",
-    price: 6.99,
-    vegetarian: true,
-    gluten: true,
-    dairy: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Nachos",
-    price: 8.99,
-    vegetarian: true,
-    dairy: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Spinach Artichoke Dip",
-    price: 7.99,
-    vegetarian: true,
-    gluten: true,
-    dairy: true,
-  },
-  {
-    name: "Stuffed Jalapeños",
-    price: 9.49,
-    vegetarian: true,
-    dairy: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Hummus Platter",
-    price: 10.99,
-    vegan: true,
-    vegetarian: true,
-    nuts: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Sweet Potato Fries",
-    price: 6.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-];
-
-const MainCourse = [
-  {
-    name: "Veggie Burger",
-    price: 9.99,
-    vegan: true,
-    vegetarian: true,
-    gluten: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Grilled Salmon",
-    price: 15.99,
-  },
-  {
-    name: "Chicken Curry",
-    price: 12.99,
-    gluten: true,
-  },
-  {
-    name: "Quinoa Salad",
-    price: 11.99,
-    vegan: true,
-    vegetarian: true,
-    nuts: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Beef Stroganoff",
-    price: 14.99,
-    dairy: true,
-  },
-  {
-    name: "Pasta Primavera",
-    price: 13.99,
-    vegetarian: true,
-    gluten: true,
-    dairy: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Mushroom Risotto",
-    price: 12.99,
-    vegetarian: true,
-    dairy: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Lamb Kebabs",
-    price: 16.99,
-  },
-  {
-    name: "Tofu Stir-Fry",
-    price: 11.99,
-    vegan: true,
-    vegetarian: true,
-    soy: true,
-    ecoFriendly: true,
-  },
-];
-
-const Desserts = [
-  {
-    name: "Chocolate Cake",
-    price: 6.99,
-    vegetarian: true,
-    gluten: true,
-    dairy: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Fruit Sorbet",
-    price: 5.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Apple Pie",
-    price: 7.99,
-    vegetarian: true,
-    nuts: true,
-    gluten: true,
-    dairy: true,
-  },
-  {
-    name: "Lemon Cheesecake",
-    price: 8.99,
-    vegetarian: true,
-    gluten: true,
-    dairy: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Vegan Brownie",
-    price: 6.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-];
-
-const Drinks = [
-  {
-    name: "Mineral Water",
-    price: 1.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Organic Red Wine",
-    price: 7.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Almond Milk Latte",
-    price: 4.99,
-    vegan: true,
-    vegetarian: true,
-    gluten: true,
-    nuts: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Green Tea",
-    price: 2.99,
-    vegan: true,
-    vegetarian: true,
-  },
-  {
-    name: "Vintage Champagne",
-    price: 99.99,
-    vegan: false,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Single Malt Whisky",
-    price: 15.99,
-    vegan: true,
-    vegetarian: true,
-  },
-  {
-    name: "Organic Craft Gin",
-    price: 12.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Premium Vodka",
-    price: 9.99,
-    vegan: true,
-    vegetarian: true,
-  },
-  {
-    name: "Rose Wine",
-    price: 8.99,
-    vegan: true,
-    vegetarian: true,
-    ecoFriendly: true,
-  },
-  {
-    name: "Espresso Martini",
-    price: 11.99,
-    vegan: true,
-    vegetarian: true,
-    containsAlcohol: true,
-  },
-];
-
-const Filters = [
-  "Nut",
-  "Dairy",
-  "Eggs",
-  "Soy",
-  "Gluten",
-  "Vegan",
-  "Vegetarian",
-];
-
 function Menu() {
   const { t } = useTranslation();
 
@@ -255,6 +18,233 @@ function Menu() {
     { key: "Gluten", label: t("filterGluten") },
     { key: "Vegan", label: t("filterVegan") },
     { key: "Vegetarian", label: t("filterVegetarian") },
+  ];
+
+  const Appetizers = [
+    {
+      name: t("gardenSalad"),
+      price: 5.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("bruschetta"),
+      price: 6.99,
+      vegetarian: true,
+      gluten: true,
+      dairy: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("nachos"),
+      price: 8.99,
+      vegetarian: true,
+      dairy: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("spinachArtichokeDip"),
+      price: 7.99,
+      vegetarian: true,
+      gluten: true,
+      dairy: true,
+    },
+    {
+      name: t("stuffedJalapenos"),
+      price: 9.49,
+      vegetarian: true,
+      dairy: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("hummusPlatter"),
+      price: 10.99,
+      vegan: true,
+      vegetarian: true,
+      nuts: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("sweetPotatoFries"),
+      price: 6.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+  ];
+
+  const MainCourse = [
+    {
+      name: t("veggieBurger"),
+      price: 9.99,
+      vegan: true,
+      vegetarian: true,
+      gluten: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("grilledSalmon"),
+      price: 15.99,
+    },
+    {
+      name: t("chickenCurry"),
+      price: 12.99,
+      gluten: true,
+    },
+    {
+      name: t("quinoaSalad"),
+      price: 11.99,
+      vegan: true,
+      vegetarian: true,
+      nuts: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("beefStroganoff"),
+      price: 14.99,
+      dairy: true,
+    },
+    {
+      name: t("pastaPrimavera"),
+      price: 13.99,
+      vegetarian: true,
+      gluten: true,
+      dairy: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("mushroomRisotto"),
+      price: 12.99,
+      vegetarian: true,
+      dairy: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("lambKebabs"),
+      price: 16.99,
+    },
+    {
+      name: t("tofuStirFry"),
+      price: 11.99,
+      vegan: true,
+      vegetarian: true,
+      soy: true,
+      ecoFriendly: true,
+    },
+  ];
+
+  const Desserts = [
+    {
+      name: t("chocolateCake"),
+      price: 6.99,
+      vegetarian: true,
+      gluten: true,
+      dairy: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("fruitSorbet"),
+      price: 5.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("applePie"),
+      price: 7.99,
+      vegetarian: true,
+      nuts: true,
+      gluten: true,
+      dairy: true,
+    },
+    {
+      name: t("lemonCheesecake"),
+      price: 8.99,
+      vegetarian: true,
+      gluten: true,
+      dairy: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("veganBrownie"),
+      price: 6.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+  ];
+
+  const Drinks = [
+    {
+      name: t("mineralWater"),
+      price: 1.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("organicRedWine"),
+      price: 7.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("almondMilkLatte"),
+      price: 4.99,
+      vegan: true,
+      vegetarian: true,
+      gluten: true,
+      nuts: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("greenTea"),
+      price: 2.99,
+      vegan: true,
+      vegetarian: true,
+    },
+    {
+      name: t("vintageChampagne"),
+      price: 99.99,
+      vegan: false,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("singleMaltWhisky"),
+      price: 15.99,
+      vegan: true,
+      vegetarian: true,
+    },
+    {
+      name: t("organicCraftGin"),
+      price: 12.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("premiumVodka"),
+      price: 9.99,
+      vegan: true,
+      vegetarian: true,
+    },
+    {
+      name: t("roseWine"),
+      price: 8.99,
+      vegan: true,
+      vegetarian: true,
+      ecoFriendly: true,
+    },
+    {
+      name: t("espressoMartini"),
+      price: 11.99,
+      vegan: true,
+      vegetarian: true,
+      containsAlcohol: true,
+    },
   ];
 
   const [searchQuery, setSearchQuery] = useState("");
