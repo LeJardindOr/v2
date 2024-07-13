@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaCheck } from "react-icons/fa";
 
 function ConfirmationPopup({ isOpen, onClose, message }) {
+  const { t } = useTranslation();
   if (!isOpen) return null;
 
   const hasDate = message.some((item) => item.label === "Date");
@@ -35,7 +37,7 @@ function ConfirmationPopup({ isOpen, onClose, message }) {
             onClick={onClose}
             className="bg-dark-green hover:bg-light-green text-white py-3 px-16 rounded-lg transition duration-200 ease-in-out flex items-center justify-center"
           >
-            Close
+            {t("Close")}
           </button>
         </div>
       </div>

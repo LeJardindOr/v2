@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaFacebookF,
   FaInstagram,
@@ -8,13 +9,15 @@ import {
 } from "react-icons/fa";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gradient text-dark mt-auto px-4 md:px-16 pt-5 pb-3">
       <div className="flex flex-col md:flex-row justify-center items-center text-center md:text-left">
         <div className="flex flex-col mb-4 w-full">
           <h2>Le Jardin d&#39;Or</h2>
           <p className="text-muted text-sm">
-            <i>© 2001-2024, Le Jardin d&#39;Or, Inc. or its affiliates</i>
+            <i>© 2001-2024, Le Jardin d&#39;Or, Inc. {t("OrAffiliates")}</i>
           </p>
         </div>
         <div className="flex justify-center items-center mb-4 w-full">
@@ -54,19 +57,20 @@ function Footer() {
                   href="mailto:support@lejardindor.com"
                   className="text-muted no-underline font-medium"
                 >
-                  Email:{" "}
+                  {t("Email")}:{" "}
                   <i className="text-[#FFD700]">support@lejardindor.com</i>
                 </a>
               </p>
             </li>
             <li>
               <p className="text-muted text-sm font-medium">
-                Phone: <i className="text-[#FFD700]">1-800-JARDIN</i>
+                {t("Phone")}: <i className="text-[#FFD700]">1-800-JARDIN</i>
               </p>
             </li>
             <li>
               <p className="text-muted text-sm font-medium">
-                Address: <i className="text-[#FFD700]">123 Road Dr, A1A 1A1</i>
+                {t("Address")}:{" "}
+                <i className="text-[#FFD700]">123 Road Dr, A1A 1A1</i>
               </p>
             </li>
           </ul>

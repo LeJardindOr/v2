@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import ContactImg from "../assets/images/contact.jpg";
 import ConfirmationPopup from "./ConfirmationPopup";
 
 function Contact() {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -21,17 +23,15 @@ function Contact() {
     <div className="container mx-auto mt-5 p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="px-3 mb-6 md:mb-0">
-          <h3 className="mb-2">Contact Us</h3>
-          <h4 className="text-lg mb-4">
-            Questions? Comments? Feedback? We're listening.
-          </h4>
+          <h3 className="mb-2">{t("ContactUs")}</h3>
+          <h4 className="text-lg mb-4">{t("QuestionsCommentsFeedback")}</h4>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="name"
               >
-                Name
+                {t("Name")}
               </label>
               <input
                 type="text"
@@ -47,7 +47,7 @@ function Contact() {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="email"
               >
-                Email
+                {t("Email")}
               </label>
               <input
                 type="email"
@@ -63,7 +63,7 @@ function Contact() {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="message"
               >
-                Message
+                {t("Message")}
               </label>
               <textarea
                 id="message"
@@ -80,7 +80,7 @@ function Contact() {
               }`}
               disabled={!isFormValid}
             >
-              Submit
+              {t("Submit")}
             </button>
           </form>
         </div>
@@ -98,9 +98,9 @@ function Contact() {
         isOpen={isConfirmationPopupOpen}
         onClose={() => setIsConfirmationPopupOpen(false)}
         message={[
-          { label: "Name", value: name },
-          { label: "Email", value: email },
-          { label: "Message", value: message },
+          { label: t("Name"), value: name },
+          { label: t("Email"), value: email },
+          { label: t("Message"), value: message },
         ]}
       />
     </div>
