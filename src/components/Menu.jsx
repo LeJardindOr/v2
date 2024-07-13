@@ -282,7 +282,7 @@ function Menu() {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-4xl mx-auto">
       <div className="mx-16 my-8">
         <h3 className="text-center">{t("Menu")}</h3>
         <div className="mt-2">
