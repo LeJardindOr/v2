@@ -84,5 +84,13 @@
   "faqQuestion4": "Avez-vous un parking disponible?",
   "faqAnswer4": "Oui, nous avons un parking disponible pour nos clients.",
   "faqQuestion5": "Proposez-vous des services de livraison?",
-  "faqAnswer5": "Oui, nous proposons des services de livraison via divers partenaires de livraison."
+  "faqAnswer5": "Oui, nous proposons des services de livraison via divers partenaires de livraison.",
+  "filterNut": "Sans Noix",
+  "filterDairy": "Sans Produits Laitiers",
+  "filterEggs": "Sans Oeufs",
+  "filterSoy": "Sans Soja",
+  "filterGluten": "Sans Gluten",
+  "filterVegan": "Végétalien",
+  "filterVegetarian": "Végétarien",
+  "searchPlaceholder": "Rechercher..."
 }

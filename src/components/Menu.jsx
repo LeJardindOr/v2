@@ -246,9 +246,20 @@ const Filters = [
 
 function Menu() {
   const { t } = useTranslation();
+
+  const Filters = [
+    { key: "Nut", label: t("filterNut") },
+    { key: "Dairy", label: t("filterDairy") },
+    { key: "Eggs", label: t("filterEggs") },
+    { key: "Soy", label: t("filterSoy") },
+    { key: "Gluten", label: t("filterGluten") },
+    { key: "Vegan", label: t("filterVegan") },
+    { key: "Vegetarian", label: t("filterVegetarian") },
+  ];
+
   const [searchQuery, setSearchQuery] = useState("");
   const [filterStates, setFilterStates] = useState(
-    Filters.reduce((acc, filter) => ({ ...acc, [filter]: false }), {})
+    Filters.reduce((acc, filter) => ({ ...acc, [filter.key]: false }), {})
   );
 
   const handleSearchChange = (event) => {
@@ -308,15 +319,15 @@ function Menu() {
             </div>
             <div className="flex flex-wrap justify-center my-4">
               {Filters.map((filter) => (
-                <label key={filter} className="flex items-center mr-4 mb-2">
+                <label key={filter.key} className="flex items-center mr-4 mb-2">
                   <input
                     type="checkbox"
-                    name={filter}
-                    checked={filterStates[filter]}
+                    name={filter.key}
+                    checked={filterStates[filter.key]}
                     onChange={handleFilterChange}
                     className="form-checkbox text-green-500 mr-2"
                   />
-                  {filter}
+                  {filter.label}
                 </label>
               ))}
             </div>

@@ -84,5 +84,13 @@
   "faqQuestion4": "Do you have parking available?",
   "faqAnswer4": "Yes, we have a parking lot available for our customers.",
   "faqQuestion5": "Do you offer delivery services?",
-  "faqAnswer5": "Yes, we offer delivery services through various delivery partners."
+  "faqAnswer5": "Yes, we offer delivery services through various delivery partners.",
+  "filterNut": "Nut-Free",
+  "filterDairy": "Dairy-Free",
+  "filterEggs": "Eggs-Free",
+  "filterSoy": "Soy-Free",
+  "filterGluten": "Gluten-Free",
+  "filterVegan": "Vegan",
+  "filterVegetarian": "Vegetarian",
+  "searchPlaceholder": "Search..."
 }
