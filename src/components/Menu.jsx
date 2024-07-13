@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { MdOutlineEco } from "react-icons/md";
 import AppetizersImg from "../assets/images/HomeFood2.jpg";
@@ -244,6 +245,7 @@ const Filters = [
 ];
 
 function Menu() {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [filterStates, setFilterStates] = useState(
     Filters.reduce((acc, filter) => ({ ...acc, [filter]: false }), {})
@@ -280,13 +282,13 @@ function Menu() {
 
   return (
     <div className="mx-16 my-8">
-      <h3 className="text-center">Menu</h3>
+      <h3 className="text-center">{t("Menu")}</h3>
       <div className="mt-2">
         <div className="flex flex-col items-center">
           <div className="relative mt-4 mb-2">
             <input
               type="text"
-              placeholder="Search menu items..."
+              placeholder={t("SearchMenuItems")}
               value={searchQuery}
               onChange={handleSearchChange}
               className="border-2 border-gray-300 bg-white h-10 pl-10 pr-16 rounded-lg text-sm focus:outline-none"
@@ -321,7 +323,7 @@ function Menu() {
         <div className="flex items-center my-1">
           <MdOutlineEco style={{ fontSize: "16px", color: "#4B5563" }} />{" "}
           <p className="ml-2 text-sm text-gray-600 font-medium">
-            = Eco-friendly sourced
+            = {t("EcoFriendly")}
           </p>
         </div>
         <div className="section-container">
@@ -330,7 +332,7 @@ function Menu() {
             alt="Appetizers"
             className="section-image rounded-lg mb-4"
           />
-          <h4 className="section-title">Appetizers</h4>
+          <h4 className="section-title">{t("Apetizers")}</h4>
           <ul>
             {filterItems(Appetizers).map((item, index) => (
               <li key={index} className="menu-item">
@@ -355,7 +357,7 @@ function Menu() {
             alt="Main Course"
             className="section-image rounded-lg my-4"
           />
-          <h4 className="section-title">Main Course</h4>
+          <h4 className="section-title">{t("MainCourses")}</h4>
           <ul>
             {filterItems(MainCourse).map((item, index) => (
               <li key={index} className="menu-item">
@@ -380,7 +382,7 @@ function Menu() {
             alt="Desserts"
             className="section-image rounded-lg my-4"
           />
-          <h4 className="section-title">Desserts</h4>
+          <h4 className="section-title">{t("Desserts")}</h4>
           <ul>
             {filterItems(Desserts).map((item, index) => (
               <li key={index} className="menu-item">
@@ -405,7 +407,7 @@ function Menu() {
             alt="Drinks"
             className="section-image rounded-lg my-4"
           />
-          <h4 className="section-title">Drinks</h4>
+          <h4 className="section-title">{t("Drinks")}</h4>
           <ul>
             {filterItems(Drinks).map((item, index) => (
               <li key={index} className="menu-item">
@@ -427,7 +429,7 @@ function Menu() {
         <div className="flex justify-center">
           <Link to="/reserve">
             <button className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-8 rounded-lg transition duration-200 ease-in-out">
-              Book a Reservation
+              {t("BookAReservation")}
             </button>
           </Link>
         </div>

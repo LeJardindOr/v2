@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import ConfirmationPopup from "./ConfirmationPopup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,6 +9,7 @@ import Food2 from "../assets/images/Food2.jpg";
 import Food3 from "../assets/images/Food3.jpg";
 
 function Reserve() {
+  const { t } = useTranslation();
   const [startDate, setStartDate] = useState(new Date());
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,18 +38,15 @@ function Reserve() {
           </div>
         </div>
         <div className="px-3 mb-6 md:mb-0">
-          <h3 className="mb-2">Book a Reservation</h3>
-          <h4 className="text-lg mb-4">
-            Fill the information boxes below, and we will get you set up with a
-            table.
-          </h4>
+          <h3 className="mb-2">{t("BookAReservation")}</h3>
+          <h4 className="text-lg mb-4">{t("ReservationInstructions")}</h4>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
               >
-                Name
+                {t("Name")}
               </label>
               <input
                 type="text"
@@ -64,7 +63,7 @@ function Reserve() {
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
-                Email
+                {t("Email")}
               </label>
               <input
                 type="email"
@@ -82,7 +81,7 @@ function Reserve() {
                   htmlFor="date-time"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Date and Time
+                  {t("DateAndTime")}
                 </label>
                 <DatePicker
                   selected={startDate}
@@ -98,7 +97,7 @@ function Reserve() {
                   htmlFor="seatings"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Number of Seatings
+                  {t("NumberOfSeatings")}
                 </label>
                 <input
                   type="number"
@@ -130,7 +129,7 @@ function Reserve() {
               }`}
               disabled={!isFormValid}
             >
-              Submit
+              {t("Submit")}
             </button>
           </form>
         </div>
@@ -162,10 +161,10 @@ function Reserve() {
         isOpen={isConfirmationPopupOpen}
         onClose={() => setIsConfirmationPopupOpen(false)}
         message={[
-          { label: "Name", value: name },
-          { label: "Email", value: email },
-          { label: "Date", value: startDate },
-          { label: "Seatings", value: seatings },
+          { label: t("Name"), value: name },
+          { label: t("Email"), value: email },
+          { label: t("Date"), value: startDate },
+          { label: t("Seatings"), value: seatings },
         ]}
       />
     </div>

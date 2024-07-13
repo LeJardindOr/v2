@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 import HomeFood1 from "../assets/images/HomeFood1.jpg";
 import HomeFood2 from "../assets/images/HomeFood2.jpg";
 import HomeFood3 from "../assets/images/HomeFood3.jpg";
@@ -12,42 +12,44 @@ import HomeFood8 from "../assets/images/HomeFood8.jpg";
 import HomeFood9 from "../assets/images/HomeFood9.jpg";
 
 function HomeMenuExcerpt() {
+  const { t } = useTranslation();
+
   const menuItems = [
     {
       id: 1,
       src: HomeFood1,
-      subtitle: "Salmon Royale",
-      desc: "Exquisite salmon steak, gently grilled, served with a side of asparagus and a rich, creamy hollandaise sauce.",
+      subtitle: t("SalmonRoyaleSubtitle"),
+      desc: t("SalmonRoyaleDesc"),
     },
     {
       id: 2,
       src: HomeFood2,
-      subtitle: "Garden Fresh Salad",
-      desc: "A vibrant mix of fresh garden greens, cherry tomatoes, cucumbers, and avocados, tossed in a light vinaigrette.",
+      subtitle: t("GardenFreshSaladSubtitle"),
+      desc: t("GardenFreshSaladDesc"),
     },
     {
       id: 3,
       src: HomeFood3,
-      subtitle: "Imperial Chicken",
-      desc: "Tender chicken breast, marinated and cooked with exotic herbs, served with quail eggs and a side of truffle-infused mashed potatoes.",
+      subtitle: t("ImperialChickenSubtitle"),
+      desc: t("ImperialChickenDesc"),
     },
     {
       id: 4,
       src: HomeFood4,
-      subtitle: "Barbecue Rib Feast",
-      desc: "Slow-cooked ribs, glazed with our signature barbecue sauce, accompanied by crispy fries and a refreshing vegetable medley.",
+      subtitle: t("BarbecueRibFeastSubtitle"),
+      desc: t("BarbecueRibFeastDesc"),
     },
     {
       id: 5,
       src: HomeFood5,
-      subtitle: "Shrimp Pasta Delight",
-      desc: "Al dente pasta tossed with succulent shrimp, in a rich garlic butter sauce, garnished with freshly grated Parmesan.",
+      subtitle: t("ShrimpPastaDelightSubtitle"),
+      desc: t("ShrimpPastaDelightDesc"),
     },
     {
       id: 6,
       src: HomeFood6,
-      subtitle: "Exotic Cocktail Fusion",
-      desc: "A mesmerizing blend of premium spirits, infused with fresh tropical fruits and exotic spices, served chilled.",
+      subtitle: t("ExoticCocktailFusionSubtitle"),
+      desc: t("ExoticCocktailFusionDesc"),
     },
   ];
 
@@ -55,26 +57,26 @@ function HomeMenuExcerpt() {
     {
       id: 7,
       src: HomeFood7,
-      subtitle: "Family Platter Extravaganza",
-      desc: "A generous platter filled with an assortment of our finest selections, perfect for sharing with loved ones.",
+      subtitle: t("FamilyPlatterExtravaganzaSubtitle"),
+      desc: t("FamilyPlatterExtravaganzaDesc"),
     },
     {
       id: 8,
       src: HomeFood8,
-      subtitle: "Golden Mango Bliss",
-      desc: "Luscious mango slices paired with a golden cream, a true dessert masterpiece that's as delightful to the eye as it is to the palate.",
+      subtitle: t("GoldenMangoBlissSubtitle"),
+      desc: t("GoldenMangoBlissDesc"),
     },
     {
       id: 9,
       src: HomeFood9,
-      subtitle: "Fancy Chocolate Decadence",
-      desc: "Rich, indulgent chocolate cake, layered with a luxurious chocolate ganache, and adorned with edible gold leaf for that extra touch of elegance.",
+      subtitle: t("FancyChocolateDecadenceSubtitle"),
+      desc: t("FancyChocolateDecadenceDesc"),
     },
   ];
 
   return (
     <div className="px-16">
-      <h3 className="mb-8">See Some Of Our Best Menu Items</h3>
+      <h3 className="mb-8">{t("BestMenuItems")}</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         {menuItems.map((item) => (
           <Link to="/menu">
@@ -91,7 +93,7 @@ function HomeMenuExcerpt() {
                 </p>
                 <div className="mt-4">
                   <div className="group inline-flex items-center text-black">
-                    See menu
+                    {t("SeeMenu")}
                     <span className="ml-2 transition-transform transform group-hover:translate-x-1">
                       →
                     </span>
@@ -125,7 +127,7 @@ function HomeMenuExcerpt() {
               </p>
               <div className="mt-4">
                 <div className="group inline-flex items-center text-black">
-                  See menu
+                  {t("SeeMenu")}
                   <span className="ml-2 transition-transform transform group-hover:translate-x-1">
                     →
                   </span>
@@ -153,7 +155,7 @@ function HomeMenuExcerpt() {
                   </p>
                   <div className="mt-4">
                     <div className="group inline-flex items-center text-black">
-                      See menu
+                      {t("SeeMenu")}
                       <span className="ml-2 transition-transform transform group-hover:translate-x-1">
                         →
                       </span>
