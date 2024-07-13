@@ -73,5 +73,16 @@
   "MainCourses": "Main Courses",
   "Desserts": "Desserts",
   "Drinks": "Drinks",
-  "SearchMenuItems": "Search menu items..."
+  "SearchMenuItems": "Search menu items...",
+  "faqTitle": "Frequently Asked Questions",
+  "faqQuestion1": "What are your opening hours?",
+  "faqAnswer1": "We are open from 10 AM to 10 PM from Monday to Sunday.",
+  "faqQuestion2": "Do you offer vegetarian options?",
+  "faqAnswer2": "Yes, we have a variety of vegetarian dishes available.",
+  "faqQuestion3": "Can I make a reservation?",
+  "faqAnswer3": "Yes, you can make a reservation by calling us or using our online reservation system.",
+  "faqQuestion4": "Do you have parking available?",
+  "faqAnswer4": "Yes, we have a parking lot available for our customers.",
+  "faqQuestion5": "Do you offer delivery services?",
+  "faqAnswer5": "Yes, we offer delivery services through various delivery partners."
 }

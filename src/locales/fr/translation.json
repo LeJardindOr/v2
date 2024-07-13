@@ -73,5 +73,16 @@
   "MainCourses": "Plats Principal",
   "Desserts": "Desserts",
   "Drinks": "Boissons",
-  "SearchMenuItems": "Rechercher dans le menu..."
+  "SearchMenuItems": "Rechercher dans le menu...",
+  "faqTitle": "Questions Fréquemment Posées",
+  "faqQuestion1": "Quels sont vos horaires d'ouverture?",
+  "faqAnswer1": "Nous sommes ouverts de 10h à 22h du lundi au dimanche.",
+  "faqQuestion2": "Proposez-vous des options végétariennes?",
+  "faqAnswer2": "Oui, nous avons une variété de plats végétariens disponibles.",
+  "faqQuestion3": "Puis-je faire une réservation?",
+  "faqAnswer3": "Oui, vous pouvez faire une réservation en nous appelant ou en utilisant notre système de réservation en ligne.",
+  "faqQuestion4": "Avez-vous un parking disponible?",
+  "faqAnswer4": "Oui, nous avons un parking disponible pour nos clients.",
+  "faqQuestion5": "Proposez-vous des services de livraison?",
+  "faqAnswer5": "Oui, nous proposons des services de livraison via divers partenaires de livraison."
 }

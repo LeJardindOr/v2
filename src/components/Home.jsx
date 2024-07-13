@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import HomeMenuExcerpt from "./HomeMenuExcerpt";
 import Reviews from "./Reviews";
+import FAQ from "./Faq";
 import HeroImg from "../assets/images/hero.jpg";
 
 function Home() {
@@ -47,6 +48,8 @@ function Home() {
       </div>
 
       <Reviews />
+
+      <FAQ />
     </>
   );
 }
