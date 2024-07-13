@@ -281,157 +281,159 @@ function Menu() {
   };
 
   return (
-    <div className="mx-16 my-8">
-      <h3 className="text-center">{t("Menu")}</h3>
-      <div className="mt-2">
-        <div className="flex flex-col items-center">
-          <div className="relative mt-4 mb-2">
-            <input
-              type="text"
-              placeholder={t("SearchMenuItems")}
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="border-2 border-gray-300 bg-white h-10 pl-10 pr-16 rounded-lg text-sm focus:outline-none"
+    <div className="max-w-screen-xl mx-auto">
+      <div className="mx-16 my-8">
+        <h3 className="text-center">{t("Menu")}</h3>
+        <div className="mt-2">
+          <div className="flex flex-col items-center">
+            <div className="relative mt-4 mb-2">
+              <input
+                type="text"
+                placeholder={t("SearchMenuItems")}
+                value={searchQuery}
+                onChange={handleSearchChange}
+                className="border-2 border-gray-300 bg-white h-10 pl-10 pr-16 rounded-lg text-sm focus:outline-none"
+              />
+              <svg
+                className="w-4 h-4 absolute left-3 top-3"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <div className="flex flex-wrap justify-center my-4">
+              {Filters.map((filter) => (
+                <label key={filter} className="flex items-center mr-4 mb-2">
+                  <input
+                    type="checkbox"
+                    name={filter}
+                    checked={filterStates[filter]}
+                    onChange={handleFilterChange}
+                    className="form-checkbox text-green-500 mr-2"
+                  />
+                  {filter}
+                </label>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center my-1">
+            <MdOutlineEco style={{ fontSize: "16px", color: "#4B5563" }} />{" "}
+            <p className="ml-2 text-sm text-gray-600 font-medium">
+              = {t("EcoFriendly")}
+            </p>
+          </div>
+          <div className="section-container">
+            <img
+              src={AppetizersImg}
+              alt="Appetizers"
+              className="section-image rounded-lg mb-4"
             />
-            <svg
-              className="w-4 h-4 absolute left-3 top-3"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
+            <h4 className="section-title">{t("Apetizers")}</h4>
+            <ul>
+              {filterItems(Appetizers).map((item, index) => (
+                <li key={index} className="menu-item">
+                  <div className="menu-item-content">
+                    <span className="menu-item-name pr-2">
+                      {item.name}
+                      {item.ecoFriendly && (
+                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                      )}
+                    </span>
+                    <span className="menu-item-price pl-2">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex flex-wrap justify-center my-4">
-            {Filters.map((filter) => (
-              <label key={filter} className="flex items-center mr-4 mb-2">
-                <input
-                  type="checkbox"
-                  name={filter}
-                  checked={filterStates[filter]}
-                  onChange={handleFilterChange}
-                  className="form-checkbox text-green-500 mr-2"
-                />
-                {filter}
-              </label>
-            ))}
+          <div className="section-container">
+            <img
+              src={MainCourseImg}
+              alt="Main Course"
+              className="section-image rounded-lg my-4"
+            />
+            <h4 className="section-title">{t("MainCourses")}</h4>
+            <ul>
+              {filterItems(MainCourse).map((item, index) => (
+                <li key={index} className="menu-item">
+                  <div className="menu-item-content">
+                    <span className="menu-item-name pr-2">
+                      {item.name}
+                      {item.ecoFriendly && (
+                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                      )}
+                    </span>
+                    <span className="menu-item-price pl-2">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-        <div className="flex items-center my-1">
-          <MdOutlineEco style={{ fontSize: "16px", color: "#4B5563" }} />{" "}
-          <p className="ml-2 text-sm text-gray-600 font-medium">
-            = {t("EcoFriendly")}
-          </p>
-        </div>
-        <div className="section-container">
-          <img
-            src={AppetizersImg}
-            alt="Appetizers"
-            className="section-image rounded-lg mb-4"
-          />
-          <h4 className="section-title">{t("Apetizers")}</h4>
-          <ul>
-            {filterItems(Appetizers).map((item, index) => (
-              <li key={index} className="menu-item">
-                <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">
-                    {item.name}
-                    {item.ecoFriendly && (
-                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
-                    )}
-                  </span>
-                  <span className="menu-item-price pl-2">
-                    ${item.price.toFixed(2)}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="section-container">
-          <img
-            src={MainCourseImg}
-            alt="Main Course"
-            className="section-image rounded-lg my-4"
-          />
-          <h4 className="section-title">{t("MainCourses")}</h4>
-          <ul>
-            {filterItems(MainCourse).map((item, index) => (
-              <li key={index} className="menu-item">
-                <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">
-                    {item.name}
-                    {item.ecoFriendly && (
-                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
-                    )}
-                  </span>
-                  <span className="menu-item-price pl-2">
-                    ${item.price.toFixed(2)}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="section-container">
-          <img
-            src={DessertsImg}
-            alt="Desserts"
-            className="section-image rounded-lg my-4"
-          />
-          <h4 className="section-title">{t("Desserts")}</h4>
-          <ul>
-            {filterItems(Desserts).map((item, index) => (
-              <li key={index} className="menu-item">
-                <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">
-                    {item.name}
-                    {item.ecoFriendly && (
-                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
-                    )}
-                  </span>
-                  <span className="menu-item-price pl-2">
-                    ${item.price.toFixed(2)}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="section-container">
-          <img
-            src={DrinksImg}
-            alt="Drinks"
-            className="section-image rounded-lg my-4"
-          />
-          <h4 className="section-title">{t("Drinks")}</h4>
-          <ul>
-            {filterItems(Drinks).map((item, index) => (
-              <li key={index} className="menu-item">
-                <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">
-                    {item.name}
-                    {item.ecoFriendly && (
-                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
-                    )}
-                  </span>
-                  <span className="menu-item-price pl-2">
-                    ${item.price.toFixed(2)}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex justify-center">
-          <Link to="/reserve">
-            <button className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-8 rounded-lg transition duration-200 ease-in-out">
-              {t("BookAReservation")}
-            </button>
-          </Link>
+          <div className="section-container">
+            <img
+              src={DessertsImg}
+              alt="Desserts"
+              className="section-image rounded-lg my-4"
+            />
+            <h4 className="section-title">{t("Desserts")}</h4>
+            <ul>
+              {filterItems(Desserts).map((item, index) => (
+                <li key={index} className="menu-item">
+                  <div className="menu-item-content">
+                    <span className="menu-item-name pr-2">
+                      {item.name}
+                      {item.ecoFriendly && (
+                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                      )}
+                    </span>
+                    <span className="menu-item-price pl-2">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="section-container">
+            <img
+              src={DrinksImg}
+              alt="Drinks"
+              className="section-image rounded-lg my-4"
+            />
+            <h4 className="section-title">{t("Drinks")}</h4>
+            <ul>
+              {filterItems(Drinks).map((item, index) => (
+                <li key={index} className="menu-item">
+                  <div className="menu-item-content">
+                    <span className="menu-item-name pr-2">
+                      {item.name}
+                      {item.ecoFriendly && (
+                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                      )}
+                    </span>
+                    <span className="menu-item-price pl-2">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex justify-center">
+            <Link to="/reserve">
+              <button className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-8 rounded-lg transition duration-200 ease-in-out">
+                {t("BookAReservation")}
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

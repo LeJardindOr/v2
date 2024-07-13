@@ -10,7 +10,7 @@ function Home() {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className="max-w-screen-xl mx-auto">
       <div className="relative pb-5 px-5 rounded-lg overflow-hidden bg-gray-900 m-16">
         <div className="absolute inset-0 z-0">
           <img
@@ -50,7 +50,7 @@ function Home() {
       <Reviews />
 
       <FAQ />
-    </>
+    </div>
   );
 }
 
