@@ -1,0 +1,49 @@
+import { useTranslation } from "react-i18next";
+
+function Faq() {
+  const { t } = useTranslation();
+
+  const faqs = [
+    {
+      question: t("faqQuestion1"),
+      answer: t("faqAnswer1"),
+    },
+    {
+      question: t("faqQuestion2"),
+      answer: t("faqAnswer2"),
+    },
+    {
+      question: t("faqQuestion3"),
+      answer: t("faqAnswer3"),
+    },
+    {
+      question: t("faqQuestion4"),
+      answer: t("faqAnswer4"),
+    },
+    {
+      question: t("faqQuestion5"),
+      answer: t("faqAnswer5"),
+    },
+  ];
+
+  return (
+    <div className="container mx-auto mt-5 p-4">
+      <h3 className="font-bold mb-4">{t("faqTitle")}</h3>
+      <div className="flex flex-col">
+        {faqs.map((faq, index) => (
+          <div
+            key={index}
+            className="w-full mb-6 p-4 border rounded-lg transition duration-500 ease-in-out shadow-md hover:shadow-none"
+          >
+            <h4 className="text-lg text-black font-semibold mb-2">
+              {faq.question}
+            </h4>
+            <p className="text-justify">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Faq;

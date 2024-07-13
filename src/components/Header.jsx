@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Logo from "../assets/images/favicon.svg";
 
 function Header() {
@@ -13,6 +14,12 @@ function Header() {
     overflow: "hidden",
     display: "flex",
     justifyContent: "center",
+  };
+
+  const { i18n } = useTranslation();
+  const { t } = useTranslation();
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -37,7 +44,7 @@ function Header() {
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <title>Menu</title>
+              <title>{t("Menu")}</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
@@ -59,7 +66,7 @@ function Header() {
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/"
                 >
-                  Home
+                  {t("Home")}
                 </Link>
               </li>
               <li className="mr-3">
@@ -71,7 +78,7 @@ function Header() {
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/menu"
                 >
-                  Menu
+                  {t("Menu")}
                 </Link>
               </li>
               <li className="mr-3">
@@ -83,7 +90,7 @@ function Header() {
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/about"
                 >
-                  About Us
+                  {t("aboutUs")}
                 </Link>
               </li>
               <li className="mr-3">
@@ -95,7 +102,7 @@ function Header() {
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/contact"
                 >
-                  Contact
+                  {t("Contact")}
                 </Link>
               </li>
               <li>
@@ -105,13 +112,31 @@ function Header() {
                   }`}
                   to="/reserve"
                 >
-                  Reservations
+                  {t("Reservations")}
                 </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      <div className="absolute top-0 left-0 mt-2 ml-2">
+        <button
+          onClick={() => changeLanguage("en")}
+          className={`mr-2 text-lg text-[#FFD700] ${
+            i18n.language === "en" ? "underline" : ""
+          }`}
+        >
+          En
+        </button>
+        <button
+          onClick={() => changeLanguage("fr")}
+          className={`text-lg text-[#FFD700] ${
+            i18n.language === "fr" ? "underline" : ""
+          }`}
+        >
+          Fr
+        </button>
+      </div>
     </header>
   );
 }
