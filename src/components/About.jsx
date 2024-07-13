@@ -13,7 +13,7 @@ function About() {
   return (
     <div className="container mx-auto mt-5 p-4">
       <div className="flex flex-wrap m-16">
-        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 md:pr-6">
+        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 md:pr-6 flex flex-col">
           <h3 className="mb-2">{t("aboutUs")}</h3>
           <h4 className="text-lg mb-4">{t("exquisiteDiningSubtitle")}</h4>
           <p className="mt-1 text-justify">
@@ -29,11 +29,11 @@ function About() {
             {t("freshFoodsDescription")}
           </p>
         </div>
-        <div className="w-full md:w-1/2 px-3">
+        <div className="w-full md:w-1/2 px-3 flex items-stretch overflow-hidden">
           <img
             src={AboutUsImg}
             alt="About Us image"
-            className="w-full rounded-lg shadow-md"
+            className="w-full h-full object-cover rounded-lg shadow-md"
           />
         </div>
       </div>
