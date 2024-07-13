@@ -119,11 +119,21 @@ function Header() {
           </div>
         </div>
       </nav>
-      <div className="absolute left-0 top-0 text-[#FFD700] border-black py-1 px-2 ">
-        <button onClick={() => changeLanguage("en")} className="mr-2 underline">
+      <div className="absolute top-0 left-0 mt-2 ml-2">
+        <button
+          onClick={() => changeLanguage("en")}
+          className={`mr-2 text-lg text-[#FFD700] ${
+            i18n.language === "en" ? "underline" : ""
+          }`}
+        >
           En
         </button>
-        <button onClick={() => changeLanguage("fr")} className="underline">
+        <button
+          onClick={() => changeLanguage("fr")}
+          className={`text-lg text-[#FFD700] ${
+            i18n.language === "fr" ? "underline" : ""
+          }`}
+        >
           Fr
         </button>
       </div>
