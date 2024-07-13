@@ -10,7 +10,7 @@ function Home() {
   const { t } = useTranslation();
 
   return (
-    <div className="max-w-screen-2xl mx-auto">
+    <div className="max-w-screen-4xl mx-auto">
       <div className="relative pb-5 px-5 rounded-lg overflow-hidden bg-gray-900 m-16">
         <div className="absolute inset-0 z-0">
           <img

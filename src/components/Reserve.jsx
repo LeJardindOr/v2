@@ -26,7 +26,7 @@ function Reserve() {
   const isFormValid = name && email && seatings && startDate;
 
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-4xl mx-auto">
       <div className="container mx-auto mt-5 p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="w-full">
