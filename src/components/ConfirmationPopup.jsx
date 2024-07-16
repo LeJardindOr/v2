@@ -8,8 +8,8 @@ function ConfirmationPopup({ isOpen, onClose, message }) {
 
   const hasDate = message.some((item) => item.label === "Date");
   const headerText = hasDate
-    ? "Reservation confirmed!"
-    : "Your Message Was Sent!";
+    ? t("reservationConfirmed")
+    : t("messageSent");
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
