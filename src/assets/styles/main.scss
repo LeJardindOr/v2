@@ -60,7 +60,7 @@ h4 {
     left: 0;
     width: 100%;
     height: 10vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 0.5em;
     z-index: 1;
   }
@@ -73,13 +73,15 @@ h4 {
 }
 
 .section-title {
+  font-family: "Moon Dance", cursive;
+  font-size: 3em;
   position: absolute;
-  top: 15%;
+  top: 5vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255);
-  font-size: 2em;
+  color: rgb(255, 215, 0);
   z-index: 2;
+  white-space: nowrap;
 }
 
 
@@ -107,5 +109,5 @@ h4 {
 
 input[type="checkbox"] {
   accent-color: #0C5139;
-  transform: scale(1.2); // Adjust the scale value as needed to make it bigger
+  transform: scale(1.2);
 }
