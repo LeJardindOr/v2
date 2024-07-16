@@ -84,7 +84,7 @@ function HomeMenuExcerpt() {
               <img
                 src={item.src}
                 alt={`Menu Item ${item.id}`}
-                className="w-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
+                className="w-full h-48 object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-105"
               />
               <div className="flex-1 py-4 flex flex-col">
                 <div className="font-bold text-xl mb-2">{item.subtitle}</div>
@@ -114,7 +114,7 @@ function HomeMenuExcerpt() {
             <img
               src={secondRowMenuItems[0].src}
               alt={`Menu Item ${secondRowMenuItems[0].id}`}
-              className="w-full md:h-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
+              className="w-full md:h-full h-48 object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-105"
             />
           </Link>
           <Link to="/menu">
@@ -146,7 +146,7 @@ function HomeMenuExcerpt() {
                 <img
                   src={item.src}
                   alt={`Menu Item ${item.id}`}
-                  className="w-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
+                  className="w-full h-48 object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-105"
                 />
                 <div className="py-4 flex flex-col">
                   <div className="font-bold text-xl mb-2">{item.subtitle}</div>
