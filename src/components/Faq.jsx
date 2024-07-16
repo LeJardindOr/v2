@@ -16,6 +16,10 @@ function Faq() {
       question: t("faqQuestion3"),
       answer: t("faqAnswer3"),
     },
+  ];
+
+  /*
+    // we dont need a whole lot of faqs, so ill cut these out for now
     {
       question: t("faqQuestion4"),
       answer: t("faqAnswer4"),
@@ -24,10 +28,10 @@ function Faq() {
       question: t("faqQuestion5"),
       answer: t("faqAnswer5"),
     },
-  ];
+  */
 
   return (
-    <div className="container mx-auto mt-5 mx-16 mb-8">
+    <div className=" mt-5 mx-16 mb-8">
       <h3 className="font-bold mb-4">{t("faqTitle")}</h3>
       <div className="flex flex-col">
         {faqs.map((faq, index) => (
