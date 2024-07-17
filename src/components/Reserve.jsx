@@ -27,7 +27,7 @@ function Reserve() {
 
   return (
     <div className="max-w-screen-4xl mx-auto">
-      <div className="container mx-auto mt-5 p-8">
+      <div className="container mx-auto mt-5 py-8">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2">
             <img
