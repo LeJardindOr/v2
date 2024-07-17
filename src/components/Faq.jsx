@@ -31,18 +31,23 @@ function Faq() {
   */
 
   return (
-    <div className=" mt-5 mx-16 mb-8">
-      <h3 className="font-bold mb-4">{t("faqTitle")}</h3>
-      <div className="flex flex-col">
+    <div className="mt-5 mx-16 mb-8">
+      <h3 className="font-bold mb-4" tabIndex="0">
+        {t("faqTitle")}
+      </h3>
+      <div className="flex flex-col" role="list">
         {faqs.map((faq, index) => (
           <div
             key={index}
             className="w-full mb-6 p-4 border rounded-lg transition duration-500 ease-in-out shadow-md hover:shadow-none"
+            role="listitem"
           >
-            <h4 className="text-lg text-black font-semibold mb-2">
+            <h4 className="text-lg text-black font-semibold mb-2" tabIndex="0">
               {faq.question}
             </h4>
-            <p className="text-justify">{faq.answer}</p>
+            <p className="text-justify" tabIndex="0">
+              {faq.answer}
+            </p>
           </div>
         ))}
       </div>

@@ -23,12 +23,26 @@ function Header() {
   };
 
   return (
-    <header className="bg-gradient px-16 py-3">
-      <nav className="flex items-center justify-between flex-wrap p-6 lg:flex-row">
+    <header className="bg-gradient px-16 py-3" role="banner">
+      <nav
+        className="flex items-center justify-between flex-wrap p-6 lg:flex-row"
+        role="navigation"
+        aria-label="Main Navigation"
+      >
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <Link className="text-white no-underline flex items-center" to="/">
-            <img src={Logo} height={48} width={48} className="mr-2" />
-            <h2>Le Jardin d&#39;Or</h2>
+          <Link
+            className="text-white no-underline flex items-center"
+            to="/"
+            aria-label="Home"
+          >
+            <img
+              src={Logo}
+              height={48}
+              width={48}
+              className="mr-2"
+              alt="Le Jardin d'Or Logo"
+            />
+            <h2 tabIndex="0">Le Jardin d&#39;Or</h2>
           </Link>
         </div>
         <div className="block lg:hidden mx-auto sm:mx-0">
@@ -55,9 +69,11 @@ function Header() {
           style={hamburgerMenuAnimation}
         >
           <div className="text-base lg:flex-grow">
-            {" "}
-            <ul className="list-reset lg:flex justify-end flex-1 items-center">
-              <li className="mr-3">
+            <ul
+              className="list-reset lg:flex justify-end flex-1 items-center"
+              role="list"
+            >
+              <li className="mr-3" role="listitem">
                 <Link
                   className={`inline-block py-2 px-4 no-underline ${
                     currentPage === "/"
@@ -65,11 +81,12 @@ function Header() {
                       : "font-medium text-black"
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/"
+                  aria-current={currentPage === "/" ? "page" : undefined}
                 >
                   {t("Home")}
                 </Link>
               </li>
-              <li className="mr-3">
+              <li className="mr-3" role="listitem">
                 <Link
                   className={`inline-block py-2 px-4 no-underline ${
                     currentPage === "/menu"
@@ -77,11 +94,12 @@ function Header() {
                       : "font-medium text-black"
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/menu"
+                  aria-current={currentPage === "/menu" ? "page" : undefined}
                 >
                   {t("Menu")}
                 </Link>
               </li>
-              <li className="mr-3">
+              <li className="mr-3" role="listitem">
                 <Link
                   className={`inline-block py-2 px-4 no-underline ${
                     currentPage === "/about"
@@ -89,11 +107,12 @@ function Header() {
                       : "font-medium text-black"
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/about"
+                  aria-current={currentPage === "/about" ? "page" : undefined}
                 >
                   {t("aboutUs")}
                 </Link>
               </li>
-              <li className="mr-3">
+              <li className="mr-3" role="listitem">
                 <Link
                   className={`inline-block py-2 px-4 no-underline ${
                     currentPage === "/contact"
@@ -101,16 +120,18 @@ function Header() {
                       : "font-medium text-black"
                   } hover:text-[#FFD700] transition duration-300`}
                   to="/contact"
+                  aria-current={currentPage === "/contact" ? "page" : undefined}
                 >
                   {t("Contact")}
                 </Link>
               </li>
-              <li>
+              <li role="listitem">
                 <Link
                   className={`inline-block bg-black font-medium py-2 px-4 no-underline rounded-lg text-base hover:text-[#FFD700] transition duration-300 ${
                     currentPage === "/reserve" ? "text-[#FFD700]" : "text-white"
                   }`}
                   to="/reserve"
+                  aria-current={currentPage === "/reserve" ? "page" : undefined}
                 >
                   {t("Reservations")}
                 </Link>
@@ -125,6 +146,7 @@ function Header() {
           className={`mr-2 text-lg text-[#FFD700] ${
             i18n.language === "en" ? "underline" : ""
           }`}
+          aria-label="Change language to English"
         >
           En
         </button>
@@ -133,6 +155,7 @@ function Header() {
           className={`text-lg text-[#FFD700] ${
             i18n.language === "fr" ? "underline" : ""
           }`}
+          aria-label="Change language to French"
         >
           Fr
         </button>

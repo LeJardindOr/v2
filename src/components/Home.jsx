@@ -16,21 +16,27 @@ function Home() {
           <img
             src={HeroImg}
             alt="Hero"
+            aria-label="Hero image of the restaurant"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 mb-24 mt-32 flex flex-col items-center justify-center h-full">
           <h1 className="text-center mb-4 text-6xl">Le Jardin d'OR</h1>
-          <p className="text-white text-center mt-2">{t("DiningExperience")}</p>
+          <p className="text-white text-center mt-2" aria-live="polite">
+            {t("DiningExperience")}
+          </p>
           <Link to="/reserve">
-            <button className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-16 rounded-lg transition duration-200 ease-in-out">
+            <button
+              className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-16 rounded-lg transition duration-200 ease-in-out"
+              aria-label="Make a reservation"
+            >
               {t("Reservation")}
             </button>
           </Link>
         </div>
       </div>
-
+      <h2></h2>
       <HomeMenuExcerpt />
 
       <div className="m-16">
@@ -44,6 +50,7 @@ function Home() {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="Location of Le Jardin d'OR on Google Maps"
         ></iframe>
       </div>
 

@@ -24,7 +24,7 @@ function Reserve() {
   };
 
   const isFormValid = name && email && seatings && startDate;
-  
+
   return (
     <div className="max-w-screen-4xl mx-auto">
       <div className="container mx-auto mt-5 p-8">
@@ -32,7 +32,7 @@ function Reserve() {
           <div className="w-full md:w-1/2">
             <img
               src={ReserveImg}
-              alt="Contact image"
+              alt={t("ContactImageAlt")}
               className="overflow-hidden rounded-lg shadow-md w-full h-full object-cover"
             />
           </div>
@@ -55,6 +55,8 @@ function Reserve() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
+                  aria-required="true"
+                  aria-label={t("Name")}
                 />
               </div>
               <div className="mb-4">
@@ -72,6 +74,8 @@ function Reserve() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  aria-required="true"
+                  aria-label={t("Email")}
                 />
               </div>
               <div className="mb-4">
@@ -89,6 +93,8 @@ function Reserve() {
                   value={seatings}
                   onChange={(e) => setSeatings(e.target.value)}
                   required
+                  aria-required="true"
+                  aria-label={t("Seatings")}
                 />
               </div>
               <div className="mb-4">
@@ -103,6 +109,8 @@ function Reserve() {
                   onChange={(date) => setStartDate(date)}
                   className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
                   required
+                  aria-required="true"
+                  aria-label={t("Date")}
                 />
               </div>
               <button
@@ -111,6 +119,7 @@ function Reserve() {
                   !isFormValid ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={!isFormValid}
+                aria-disabled={!isFormValid}
               >
                 {t("Submit")}
               </button>
@@ -121,21 +130,21 @@ function Reserve() {
           <div className="aspect-square overflow-hidden rounded-lg">
             <img
               src={Food1}
-              alt="Food 1"
+              alt={t("Food1Alt")}
               className="w-full h-full object-cover"
             />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
             <img
               src={Food2}
-              alt="Food 2"
+              alt={t("Food2Alt")}
               className="w-full h-full object-cover"
             />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
             <img
               src={Food3}
-              alt="Food 3"
+              alt={t("Food3Alt")}
               className="w-full h-full object-cover"
             />
           </div>

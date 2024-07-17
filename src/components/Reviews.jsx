@@ -86,6 +86,7 @@ function Reviews() {
         <button
           onClick={() => changeReview("prev")}
           className="text-2xl sm:text-4xl mr-2 sm:mr-8 transition-transform transform hover:scale-125"
+          aria-label={t("PreviousReview")}
         >
           &#8592;
         </button>
@@ -98,6 +99,7 @@ function Reviews() {
                 className={`flex-1 flex flex-col justify-between p-4 border rounded-lg transition duration-500 ease-in-out shadow-lg hover:shadow-none ${
                   animate ? "opacity-100" : "opacity-0"
                 }`}
+                aria-live="polite"
               >
                 <p>"{review.quote}"</p>
                 <p className="mt-4 text-right">- {review.name}</p>
@@ -107,6 +109,7 @@ function Reviews() {
         <button
           onClick={() => changeReview("next")}
           className="text-2xl sm:text-4xl ml-2 sm:ml-8 transition-transform transform hover:scale-125"
+          aria-label={t("NextReview")}
         >
           &#8594;
         </button>

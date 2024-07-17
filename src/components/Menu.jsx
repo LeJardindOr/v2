@@ -284,7 +284,9 @@ function Menu() {
   return (
     <div className="max-w-screen-4xl mx-auto">
       <div className="mx-16 my-8">
-        <h3 className="text-center">{t("Menu")}</h3>
+        <h3 className="text-center" role="heading" aria-level="1">
+          {t("Menu")}
+        </h3>
         <div className="mt-2">
           <div className="flex flex-col items-center">
             <div className="relative mt-4 mb-2">
@@ -294,6 +296,7 @@ function Menu() {
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="border-2 border-gray-300 bg-white h-10 pl-10 pr-16 rounded-lg text-sm focus:outline-none"
+                aria-label={t("SearchMenuItems")}
               />
               <svg
                 className="w-4 h-4 absolute left-3 top-3"
@@ -303,6 +306,7 @@ function Menu() {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -316,6 +320,7 @@ function Menu() {
                     checked={filterStates[filter.key]}
                     onChange={handleFilterChange}
                     className="form-checkbox text-green-500 mr-2"
+                    aria-label={filter.label}
                   />
                   {filter.label}
                 </label>
@@ -323,7 +328,10 @@ function Menu() {
             </div>
           </div>
           <div className="flex items-center my-1">
-            <MdOutlineEco style={{ fontSize: "16px", color: "#4B5563" }} />{" "}
+            <MdOutlineEco
+              style={{ fontSize: "16px", color: "#4B5563" }}
+              aria-hidden="true"
+            />{" "}
             <p className="ml-2 text-sm text-gray-600 font-medium">
               = {t("EcoFriendly")}
             </p>
@@ -331,10 +339,12 @@ function Menu() {
           <div className="section-container">
             <img
               src={AppetizersImg}
-              alt="Appetizers"
+              alt={t("Appetizers")}
               className="section-image rounded-lg mb-4"
             />
-            <h4 className="section-title">{t("Apetizers")}</h4>
+            <h4 className="section-title" role="heading" aria-level="2">
+              {t("Apetizers")}
+            </h4>
             <ul>
               {filterItems(Appetizers).map((item, index) => (
                 <li key={index} className="menu-item">
@@ -342,7 +352,10 @@ function Menu() {
                     <span className="menu-item-name pr-2">
                       {item.name}
                       {item.ecoFriendly && (
-                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                        <MdOutlineEco
+                          className="eco-friendly-icon mx-1 inline-block"
+                          aria-hidden="true"
+                        />
                       )}
                     </span>
                     <span className="menu-item-price pl-2">
@@ -356,10 +369,12 @@ function Menu() {
           <div className="section-container">
             <img
               src={MainCourseImg}
-              alt="Main Course"
+              alt={t("Main Course")}
               className="section-image rounded-lg my-4"
             />
-            <h4 className="section-title">{t("MainCourses")}</h4>
+            <h4 className="section-title" role="heading" aria-level="2">
+              {t("MainCourses")}
+            </h4>
             <ul>
               {filterItems(MainCourse).map((item, index) => (
                 <li key={index} className="menu-item">
@@ -367,7 +382,10 @@ function Menu() {
                     <span className="menu-item-name pr-2">
                       {item.name}
                       {item.ecoFriendly && (
-                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                        <MdOutlineEco
+                          className="eco-friendly-icon mx-1 inline-block"
+                          aria-hidden="true"
+                        />
                       )}
                     </span>
                     <span className="menu-item-price pl-2">
@@ -381,10 +399,12 @@ function Menu() {
           <div className="section-container">
             <img
               src={DessertsImg}
-              alt="Desserts"
+              alt={t("Desserts")}
               className="section-image rounded-lg my-4"
             />
-            <h4 className="section-title">{t("Desserts")}</h4>
+            <h4 className="section-title" role="heading" aria-level="2">
+              {t("Desserts")}
+            </h4>
             <ul>
               {filterItems(Desserts).map((item, index) => (
                 <li key={index} className="menu-item">
@@ -392,7 +412,10 @@ function Menu() {
                     <span className="menu-item-name pr-2">
                       {item.name}
                       {item.ecoFriendly && (
-                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                        <MdOutlineEco
+                          className="eco-friendly-icon mx-1 inline-block"
+                          aria-hidden="true"
+                        />
                       )}
                     </span>
                     <span className="menu-item-price pl-2">
@@ -406,10 +429,12 @@ function Menu() {
           <div className="section-container">
             <img
               src={DrinksImg}
-              alt="Drinks"
+              alt={t("Drinks")}
               className="section-image rounded-lg my-4"
             />
-            <h4 className="section-title">{t("Drinks")}</h4>
+            <h4 className="section-title" role="heading" aria-level="2">
+              {t("Drinks")}
+            </h4>
             <ul>
               {filterItems(Drinks).map((item, index) => (
                 <li key={index} className="menu-item">
@@ -417,7 +442,10 @@ function Menu() {
                     <span className="menu-item-name pr-2">
                       {item.name}
                       {item.ecoFriendly && (
-                        <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                        <MdOutlineEco
+                          className="eco-friendly-icon mx-1 inline-block"
+                          aria-hidden="true"
+                        />
                       )}
                     </span>
                     <span className="menu-item-price pl-2">
@@ -430,7 +458,10 @@ function Menu() {
           </div>
           <div className="flex justify-center">
             <Link to="/reserve">
-              <button className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-8 rounded-lg transition duration-200 ease-in-out">
+              <button
+                className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-8 rounded-lg transition duration-200 ease-in-out"
+                aria-label={t("BookAReservation")}
+              >
                 {t("BookAReservation")}
               </button>
             </Link>
