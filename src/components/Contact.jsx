@@ -24,9 +24,13 @@ function Contact() {
       <div className="container mx-auto mt-5 p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="px-3 mb-6 md:mb-0">
-            <h3 className="mb-2">{t("ContactUs")}</h3>
-            <h4 className="text-lg mb-4">{t("QuestionsCommentsFeedback")}</h4>
-            <form onSubmit={handleSubmit}>
+            <h3 className="mb-2" tabIndex="0">
+              {t("ContactUs")}
+            </h3>
+            <h4 className="text-lg mb-4" tabIndex="0">
+              {t("QuestionsCommentsFeedback")}
+            </h4>
+            <form onSubmit={handleSubmit} aria-label={t("ContactForm")}>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
@@ -41,6 +45,7 @@ function Contact() {
                   onChange={(e) => setName(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
+                  aria-required="true"
                 />
               </div>
               <div className="mb-4">
@@ -57,6 +62,7 @@ function Contact() {
                   onChange={(e) => setEmail(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
+                  aria-required="true"
                 />
               </div>
               <div className="mb-4">
@@ -72,6 +78,7 @@ function Contact() {
                   onChange={(e) => setMessage(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
+                  aria-required="true"
                 />
               </div>
               <button
@@ -80,6 +87,7 @@ function Contact() {
                   !isFormValid ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={!isFormValid}
+                aria-disabled={!isFormValid}
               >
                 {t("Submit")}
               </button>
@@ -89,7 +97,7 @@ function Contact() {
             <div className="overflow-hidden rounded-lg shadow-md">
               <img
                 src={ContactImg}
-                alt="Contact image"
+                alt={t("ContactImageAlt")}
                 className="w-full h-full object-cover"
               />
             </div>

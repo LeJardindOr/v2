@@ -79,12 +79,12 @@ function HomeMenuExcerpt() {
       <h3 className="mb-8">{t("BestMenuItems")}</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         {menuItems.map((item) => (
-          <Link to="/menu">
-            <div key={item.id} className="flex flex-col overflow-hidden h-full">
+          <Link to="/menu" key={item.id} aria-label={item.subtitle}>
+            <div className="flex flex-col overflow-hidden h-full">
               <img
                 src={item.src}
-                alt={`Menu Item ${item.id}`}
-                className="w-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
+                alt={item.subtitle}
+                className="w-full h-48 object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-105"
               />
               <div className="flex-1 py-4 flex flex-col">
                 <div className="font-bold text-xl mb-2">{item.subtitle}</div>
@@ -110,14 +110,15 @@ function HomeMenuExcerpt() {
           <Link
             to="/menu"
             style={{ display: "block", width: "100%", height: "100%" }}
+            aria-label={secondRowMenuItems[0].subtitle}
           >
             <img
               src={secondRowMenuItems[0].src}
-              alt={`Menu Item ${secondRowMenuItems[0].id}`}
-              className="w-full md:h-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
+              alt={secondRowMenuItems[0].subtitle}
+              className="w-full md:h-full h-48 object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-105"
             />
           </Link>
-          <Link to="/menu">
+          <Link to="/menu" aria-label={secondRowMenuItems[0].subtitle}>
             <div className="py-4 flex flex-col">
               <div className="font-bold text-xl mb-2">
                 {secondRowMenuItems[0].subtitle}
@@ -138,15 +139,12 @@ function HomeMenuExcerpt() {
         </div>
         <div className="flex flex-col col-span-1 space-y-8">
           {secondRowMenuItems.slice(1).map((item) => (
-            <Link to="/menu">
-              <div
-                key={item.id}
-                className="flex-1 flex flex-col overflow-hidden h-full"
-              >
+            <Link to="/menu" key={item.id} aria-label={item.subtitle}>
+              <div className="flex-1 flex flex-col overflow-hidden h-full">
                 <img
                   src={item.src}
-                  alt={`Menu Item ${item.id}`}
-                  className="w-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105"
+                  alt={item.subtitle}
+                  className="w-full h-48 object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-105"
                 />
                 <div className="py-4 flex flex-col">
                   <div className="font-bold text-xl mb-2">{item.subtitle}</div>

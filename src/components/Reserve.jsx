@@ -28,17 +28,15 @@ function Reserve() {
   return (
     <div className="max-w-screen-4xl mx-auto">
       <div className="container mx-auto mt-5 p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="w-full">
-            <div className="overflow-hidden rounded-lg shadow-md">
-              <img
-                src={ReserveImg}
-                alt="Contact image"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="w-full md:w-1/2">
+            <img
+              src={ReserveImg}
+              alt={t("ContactImageAlt")}
+              className="overflow-hidden rounded-lg shadow-md w-full h-full object-cover"
+            />
           </div>
-          <div className="px-3 mb-6 md:mb-0">
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
             <h3 className="mb-2">{t("BookAReservation")}</h3>
             <h4 className="text-lg mb-4">{t("ReservationInstructions")}</h4>
             <form onSubmit={handleSubmit}>
@@ -57,6 +55,8 @@ function Reserve() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
+                  aria-required="true"
+                  aria-label={t("Name")}
                 />
               </div>
               <div className="mb-4">
@@ -74,54 +74,44 @@ function Reserve() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  aria-required="true"
+                  aria-label={t("Email")}
                 />
               </div>
-              <div className="flex justify-between gap-4 mb-6">
-                <div className="flex-1">
-                  <label
-                    htmlFor="date-time"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t("DateAndTime")}
-                  </label>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    showTimeSelect
-                    dateFormat="Pp"
-                    className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
-                    required
-                  />
-                </div>
-                <div className="flex-1">
-                  <label
-                    htmlFor="seatings"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t("NumberOfSeatings")}
-                  </label>
-                  <input
-                    type="number"
-                    className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
-                    id="seatings"
-                    placeholder="4"
-                    value={seatings}
-                    onChange={(e) => {
-                      let value = e.target.value;
-                      // make sure the input makes sense, we dont want 0.5 persons or -4 persons lol
-                      value = value.replace(/[-.]/g, "");
-                      if (
-                        value === "" ||
-                        (/^\d+$/.test(value) && parseInt(value, 10) > 0)
-                      ) {
-                        setSeatings(value);
-                      } else {
-                        setSeatings("");
-                      }
-                    }}
-                    required
-                  />
-                </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="seatings"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  {t("Seatings")}
+                </label>
+                <input
+                  type="number"
+                  className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
+                  id="seatings"
+                  placeholder="2"
+                  value={seatings}
+                  onChange={(e) => setSeatings(e.target.value)}
+                  required
+                  aria-required="true"
+                  aria-label={t("Seatings")}
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="startDate"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  {t("Date")}
+                </label>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
+                  required
+                  aria-required="true"
+                  aria-label={t("Date")}
+                />
               </div>
               <button
                 type="submit"
@@ -129,6 +119,7 @@ function Reserve() {
                   !isFormValid ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={!isFormValid}
+                aria-disabled={!isFormValid}
               >
                 {t("Submit")}
               </button>
@@ -139,21 +130,21 @@ function Reserve() {
           <div className="aspect-square overflow-hidden rounded-lg">
             <img
               src={Food1}
-              alt="Food 1"
+              alt={t("Food1Alt")}
               className="w-full h-full object-cover"
             />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
             <img
               src={Food2}
-              alt="Food 2"
+              alt={t("Food2Alt")}
               className="w-full h-full object-cover"
             />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
             <img
               src={Food3}
-              alt="Food 3"
+              alt={t("Food3Alt")}
               className="w-full h-full object-cover"
             />
           </div>
