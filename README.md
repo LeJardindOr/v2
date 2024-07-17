@@ -6,3 +6,6 @@ fix the sizing of the images
 
 added max width on the pages
 i replaced the warning for missing info with the blank because cognitif humain reconnaissant
+
+scoring 100% on both accessibilty and SEO
+(would have worked on preformace if i had more time)
