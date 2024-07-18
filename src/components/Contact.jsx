@@ -94,13 +94,11 @@ function Contact() {
             </form>
           </div>
           <div className="w-full">
-            <div className="overflow-hidden rounded-lg shadow-md">
-              <img
-                src={ContactImg}
-                alt={t("ContactImageAlt")}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src={ContactImg}
+              alt={t("ContactImageAlt")}
+              className="overflow-hidden rounded-lg shadow-md w-full h-full object-cover"
+            />
           </div>
         </div>
         <ConfirmationPopup

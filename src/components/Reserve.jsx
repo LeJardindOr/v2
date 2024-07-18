@@ -32,7 +32,7 @@ function Reserve() {
           <div className="w-full md:w-1/2">
             <img
               src={ReserveImg}
-              alt={t("ContactImageAlt")}
+              alt={t("ReservationImageAlt")}
               className="overflow-hidden rounded-lg shadow-md w-full h-full object-cover"
             />
           </div>
