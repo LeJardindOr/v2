@@ -11,7 +11,7 @@ function About() {
   const { t } = useTranslation();
 
   return (
-    <div className="container mx-auto mt-5 p-4" role="main">
+    <div className="container mx-auto mt-5 py-4" role="main">
       <div className="flex flex-wrap m-16">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 md:pr-6 flex flex-col">
           <h3 className="mb-2" tabIndex="0">

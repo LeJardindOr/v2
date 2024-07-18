@@ -21,7 +21,7 @@ function Contact() {
 
   return (
     <div className="max-w-screen-4xl mx-auto">
-      <div className="container mx-auto mt-5 p-8">
+      <div className="container mx-auto mt-5 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="px-3 mb-6 md:mb-0">
             <h3 className="mb-2" tabIndex="0">
@@ -94,13 +94,11 @@ function Contact() {
             </form>
           </div>
           <div className="w-full">
-            <div className="overflow-hidden rounded-lg shadow-md">
-              <img
-                src={ContactImg}
-                alt={t("ContactImageAlt")}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src={ContactImg}
+              alt={t("ContactImageAlt")}
+              className="overflow-hidden rounded-lg shadow-md w-full h-full object-cover"
+            />
           </div>
         </div>
         <ConfirmationPopup
