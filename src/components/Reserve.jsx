@@ -108,6 +108,7 @@ function Reserve() {
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                   className="mt-1 p-1 block w-full rounded-lg border border-gray-300 focus:border-black"
+                  showTimeSelect
                   required
                   aria-required="true"
                   aria-label={t("Date")}
